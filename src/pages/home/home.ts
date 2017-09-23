@@ -3,8 +3,10 @@ import { DECREMENT, INCREMENT, RESET } from '../../reducers/counter';
 import { ModalController, NavController } from 'ionic-angular';
 
 import { AddPlantPage } from '../add-plant/add-plant';
+import { LOAD } from '../../reducers/plants';
 import { Observable } from 'rxjs/Rx';
 import { Store } from '@ngrx/store';
+import myPlants from '../../dummy/my-plants';
 
 interface AppState {
   counter: number;
@@ -16,14 +18,15 @@ interface AppState {
 })
 export class HomePage {
 
-  counter: Observable<number>;
+  plants: Observable<number>;
 
   constructor(
     public navCtrl: NavController,
     private store: Store<AppState>,
     public modalCtrl: ModalController
   ) {
-    this.counter = store.select('counter');
+    this.plants = store.select('plants');
+    this.store.dispatch({ type: LOAD, payload: myPlants });
   }
 
   presentAddPlantModal() {
@@ -34,18 +37,6 @@ export class HomePage {
     });
 
     addPlantModal.present();
-  }
-
-  increment(){
-    this.store.dispatch({ type: INCREMENT });
-  }
-
-  decrement(){
-    this.store.dispatch({ type: DECREMENT });
-  }
-
-  reset(){
-    this.store.dispatch({ type: RESET });
   }
 
 }

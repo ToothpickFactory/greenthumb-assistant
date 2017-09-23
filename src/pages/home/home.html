@@ -10,11 +10,11 @@
 </ion-header>
 
 <ion-content padding>
-  <button (click)="increment()">Increment</button>
-  <div>Current Count: {{ counter | async }}</div>
-  <button (click)="decrement()">Decrement</button>
-
-  <button (click)="reset()">Reset Counter</button>
+  <ul>
+    <li *ngFor="let plant of plants | async">
+      <pre>{{plant | json}}</pre>
+    </li>
+  </ul>
 
   <ion-fab bottom right>
     <button ion-fab (click)="presentAddPlantModal()"><ion-icon name="add"></ion-icon></button>

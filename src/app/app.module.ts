@@ -9,7 +9,7 @@ import { MyApp } from './app.component';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { StoreModule } from '@ngrx/store';
-import { counterReducer } from '../reducers/counter';
+import { plantsReducer } from '../reducers/plants';
 
 @NgModule({
   declarations: [
@@ -20,8 +20,7 @@ import { counterReducer } from '../reducers/counter';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    StoreModule.provideStore({ counter: counterReducer }),
-    GridsterModule
+    StoreModule.provideStore({ plants: plantsReducer })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
