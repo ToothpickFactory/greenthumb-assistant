@@ -7,9 +7,6 @@ import { Observable } from 'rxjs/Rx';
 import { Store } from '@ngrx/store';
 import myPlants from '../../dummy/my-plants';
 
-interface AppState {
-  counter: number;
-}
 
 @Component({
   selector: 'page-home',
@@ -21,7 +18,7 @@ export class HomePage {
 
   constructor(
     public navCtrl: NavController,
-    private store: Store<AppState>,
+    private store: Store<any>,
     public modalCtrl: ModalController
   ) {
     this.plants = store.select('plants');
