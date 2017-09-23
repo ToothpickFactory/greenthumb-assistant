@@ -10,11 +10,8 @@
 </ion-header>
 
 <ion-content padding>
-  <ul>
-    <li *ngFor="let plant of plants | async">
-      <pre>{{plant | json}}</pre>
-    </li>
-  </ul>
+
+  <plot [plants]="plants | async"></plot>
 
   <ion-fab bottom right>
     <button ion-fab (click)="presentAddPlantModal()"><ion-icon name="add"></ion-icon></button>

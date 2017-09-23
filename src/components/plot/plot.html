@@ -1,4 +1,20 @@
 <!-- Generated template for the PlotComponent component -->
-<div>
-  {{text}}
-</div>
+<gridster
+  #gridster1
+  [options]="gridsterOptions"
+  [draggableOptions]="gridsterDraggableOptions"
+  (optionsChange)="optionsChange($event)">
+
+  <gridster-item
+    gridsterItemPrototype
+    *ngFor="let plant of plants; let i = index"
+    [options]="itemOptions"
+    [dragAndDrop]="plant.dragAndDrop"
+    [resizable]="plant.resizable"
+    [(x)]="plant.x" [(y)]="plant.y"
+    [(w)]="plant.w" [(h)]="plant.h"
+    (change)="itemChange($event, gridster1)"
+    (enter)="over($event)"
+    (out)="out($event)">
+  </gridster-item>
+</gridster>

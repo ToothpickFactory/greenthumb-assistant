@@ -3,6 +3,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { AddPlantPage } from '../pages/add-plant/add-plant';
 import { BrowserModule } from '@angular/platform-browser';
+import { ComponentsModule } from '../components/components.module';
 import { GridsterModule } from 'angular2gridster';
 import { HomePage } from '../pages/home/home';
 import { MyApp } from './app.component';
@@ -20,7 +21,9 @@ import { plantsReducer } from '../reducers/plants';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    StoreModule.provideStore({ plants: plantsReducer })
+    StoreModule.provideStore({ plants: plantsReducer }),
+    ComponentsModule,
+    GridsterModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
