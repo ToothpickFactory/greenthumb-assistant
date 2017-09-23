@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Plot</ion-title>
     <ion-buttons end>
       <button ion-button icon-only>
         <ion-icon name="cog"></ion-icon>
@@ -15,4 +15,8 @@
   <button (click)="decrement()">Decrement</button>
 
   <button (click)="reset()">Reset Counter</button>
+
+  <ion-fab bottom right>
+    <button ion-fab (click)="presentAddPlantModal()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
 </ion-content>
