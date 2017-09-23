@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { StoreModule } from '@ngrx/store';
-import { counterReducer } from '../reducers/counter';
+import { plantsReducer } from '../reducers/plants';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -20,7 +20,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    StoreModule.provideStore({ counter: counterReducer })
+    StoreModule.provideStore({ plants: plantsReducer })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
