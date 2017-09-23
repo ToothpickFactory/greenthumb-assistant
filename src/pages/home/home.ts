@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
-import { NavController, ModalController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { DECREMENT, INCREMENT, RESET } from '../../reducers/counter';
+import { ModalController, NavController } from 'ionic-angular';
+
+import { AddPlantPage } from '../add-plant/add-plant';
 import { Observable } from 'rxjs/Rx';
 import { Store } from '@ngrx/store';
-import { INCREMENT, DECREMENT, RESET } from '../../reducers/counter';
-import { AddPlantPage } from '../add-plant/add-plant';
 
 interface AppState {
   counter: number;

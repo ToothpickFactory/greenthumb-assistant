@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
+import { PlotComponent } from './plot/plot';
 @NgModule({
-	declarations: [],
+	declarations: [PlotComponent],
 	imports: [],
-	exports: []
+	exports: [PlotComponent]
 })
 export class ComponentsModule {}
