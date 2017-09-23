@@ -1,5 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { DECREMENT, INCREMENT, RESET } from '../../reducers/counter';
 import { ModalController, NavController } from 'ionic-angular';
 
 import { AddPlantPage } from '../add-plant/add-plant';
