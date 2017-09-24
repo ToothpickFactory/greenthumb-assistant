@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ViewController } from 'ionic-angular';
 import { ADD } from '../../reducers/plants';
-import { Observable } from 'rxjs/Rx';
 import { Store } from '@ngrx/store';
 
 let myPlant = {

@@ -1,5 +1,5 @@
 <!-- Generated template for the PlotComponent component -->
-<gridster
+<!-- <gridster
   #gridster1
   [options]="gridsterOptions"
   [draggableOptions]="gridsterDraggableOptions"
@@ -17,4 +17,23 @@
     (enter)="over($event)"
     (out)="out($event)">
   </gridster-item>
+</gridster> -->
+
+<gridster
+  [options]="gridsterOptions"
+  [draggableOptions]="{ handlerClass: 'panel-heading' }">
+  <gridster-item
+    *ngFor="let plant of plants"
+    [(x)]="plant.x"
+    [(y)]="plant.y"
+    [(w)]="plant.w"
+    [(h)]="plant.h">
+  </gridster-item>
 </gridster>
+
+
+<ul>
+  <li *ngFor="let plant of plants">
+    <pre>{{plant | json}}</pre>
+  </li>
+</ul>

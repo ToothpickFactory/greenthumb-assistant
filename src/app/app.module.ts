@@ -22,8 +22,7 @@ import { plantsReducer } from '../reducers/plants';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     StoreModule.provideStore({ plants: plantsReducer }),
-    ComponentsModule,
-    GridsterModule
+    ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

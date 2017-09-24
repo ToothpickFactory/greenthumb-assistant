@@ -22,14 +22,21 @@ export class PlotComponent {
       maxHeight: 3
   };
 
-  gridsterOptions: IGridsterOptions = {
-      // core configuration is default one - for smallest view. It has hidden minWidth: 0.
-      lanes: 2,                 // amount of lanes (cells) in the grid
-      direction: 'vertical',    // floating top - vertical, left - horizontal
-      dragAndDrop: true,        // enable/disable drag and drop for all items in grid
-      resizable: true,          // enable/disable resizing by drag and drop for all items in grid
-      widthHeightRatio: 1,      // proportion between item width and height
-      shrink: true
+  // gridsterOptions: IGridsterOptions = {
+  //     // core configuration is default one - for smallest view. It has hidden minWidth: 0.
+  //     lanes: 2,                 // amount of lanes (cells) in the grid
+  //     direction: 'vertical',    // floating top - vertical, left - horizontal
+  //     dragAndDrop: true,        // enable/disable drag and drop for all items in grid
+  //     resizable: true,          // enable/disable resizing by drag and drop for all items in grid
+  //     widthHeightRatio: 1,      // proportion between item width and height
+  //     shrink: true
+  // };
+
+  gridsterOptions:IGridsterOptions = {
+    lanes: 5, // how many lines (grid cells) dashboard has
+    direction: 'vertical', // items floating direction: vertical/horizontal
+    dragAndDrop: true, // possible to change items position by drag n drop
+    resizable: true // possible to resize items by drag n drop by item edge/corner
   };
 
   gridsterDraggableOptions: IGridsterDraggableOptions = {
