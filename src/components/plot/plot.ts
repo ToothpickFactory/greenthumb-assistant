@@ -18,29 +18,19 @@ export class PlotComponent {
   @ViewChild(GridsterComponent) gridster: GridsterComponent;
 
   itemOptions = {
-      maxWidth: 3,
-      maxHeight: 3
+      maxWidth: 2,
+      maxHeight: 2
   };
 
-  // gridsterOptions: IGridsterOptions = {
-  //     // core configuration is default one - for smallest view. It has hidden minWidth: 0.
-  //     lanes: 2,                 // amount of lanes (cells) in the grid
-  //     direction: 'vertical',    // floating top - vertical, left - horizontal
-  //     dragAndDrop: true,        // enable/disable drag and drop for all items in grid
-  //     resizable: true,          // enable/disable resizing by drag and drop for all items in grid
-  //     widthHeightRatio: 1,      // proportion between item width and height
-  //     shrink: true
-  // };
-
   gridsterOptions:IGridsterOptions = {
-    lanes: 5, // how many lines (grid cells) dashboard has
+    lanes: 2, // how many lines (grid cells) dashboard has
     direction: 'vertical', // items floating direction: vertical/horizontal
     dragAndDrop: true, // possible to change items position by drag n drop
     resizable: true // possible to resize items by drag n drop by item edge/corner
   };
 
   gridsterDraggableOptions: IGridsterDraggableOptions = {
-      handlerClass: 'panel-heading'
+      handlerClass: 'draggable'
   };
 
   constructor() {
@@ -59,13 +49,17 @@ export class PlotComponent {
     console.log('out(', ev, ')');
   }
 
-  itemChange(ev) {
-    console.log('itemChange(', ev, ')');
+  itemChange(ev, gardenPlot) {
+    console.log('itemChange(', ev, gardenPlot, ')');
   }
 
   remove($event, index: number, gridster: GridsterComponent) {
     $event.preventDefault();
     this.plants.splice(index, 1);
     console.log('plant remove', index);
+  }
+
+  optionsChange(ev) {
+    console.log('optionsChange(', ev, ')');
   }
 }

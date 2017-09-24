@@ -1,36 +1,26 @@
 <!-- Generated template for the PlotComponent component -->
-<!-- <gridster
-  #gridster1
+<gridster
+  #gardenPlot
   [options]="gridsterOptions"
   [draggableOptions]="gridsterDraggableOptions"
   (optionsChange)="optionsChange($event)">
-
   <gridster-item
+    class="draggable"
     gridsterItemPrototype
-    *ngFor="let plant of plants; let i = index"
+    *ngFor="let plant of plants"
     [options]="itemOptions"
     [dragAndDrop]="plant.dragAndDrop"
     [resizable]="plant.resizable"
-    [(x)]="plant.x" [(y)]="plant.y"
-    [(w)]="plant.w" [(h)]="plant.h"
-    (change)="itemChange($event, gridster1)"
-    (enter)="over($event)"
-    (out)="out($event)">
-  </gridster-item>
-</gridster> -->
-
-<gridster
-  [options]="gridsterOptions"
-  [draggableOptions]="{ handlerClass: 'panel-heading' }">
-  <gridster-item
-    *ngFor="let plant of plants"
     [(x)]="plant.x"
     [(y)]="plant.y"
     [(w)]="plant.w"
-    [(h)]="plant.h">
+    [(h)]="plant.h"
+    (enter)="over($event)"
+    (out)="out($event)"
+    (change)="itemChange($event, gardenPlot)">
+    {{plant.title}}
   </gridster-item>
 </gridster>
-
 
 <ul>
   <li *ngFor="let plant of plants">

@@ -1,3 +1,10 @@
 plot {
-
+  gridster {
+    background: lightgray;
+  }
+  gridster-item {
+    z-index: 1;
+    background: lightblue;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  }
 }
